@@ -1,0 +1,20 @@
+.topic {
+    text-align: center;
+    color: red;
+    text-decoration: double;
+    text-decoration-color: black;
+    text-decoration-line: underline;
+    text-shadow: 0px 2px 2px yellowgreen;
+    margin-bottom: 7vh;
+}
+
+.ans {
+    text-decoration: underline;
+    background-color: greenyellow;
+}
+
+.query {
+    color: goldenrod;
+    text-shadow: 1px 1px 1px black;
+    font-size: larger;
+}
