@@ -1,4 +1,4 @@
-const clouddb = "mongodb+srv://ramsuraj14:surajMongodb@cluster0.ja3jyma.mongodb.net/?retryWrites=true&w=majority";
+const clouddb = "mongodb+srv://ramsuraj14:surajMongodb@cluster0.ja3jyma.mongodb.net/Human_Resource?retryWrites=true&w=majority";
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true)
 

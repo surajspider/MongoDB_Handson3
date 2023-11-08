@@ -1,5 +1,11 @@
-const mongoose = require("mongoose");
+const employee = require("../Models/DataModel")
+const data = require("../data")
 
-const dataSchema = mongoose.Schema({
 
-})
+const dataentry = async (req, res) => {
+    const response = await employee.create(data);
+    console.log(response);
+    return res.send(response);
+}
+
+module.exports = { dataentry };

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const connection = require("./Config/db");
+const { dataRouter } = require("./Router/DataRouter");
 const PORT = 4500;
 
 app.use(cors({
@@ -9,6 +10,8 @@ app.use(cors({
 }))
 
 app.use(express.json());
+
+app.use("/api", dataRouter);
 
 app.get("/", (req, res) => {
     res.send("Home Page");
