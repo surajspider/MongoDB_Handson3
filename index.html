@@ -11,7 +11,7 @@
     <hr>
     <h3>Q1. Create a database , give it name like "Human_Resource". Create a collection inside this named "employee"</h3>
     <h3><span class="ans">Answer:</span> To create a database - <span class="query">use Human_Resource</span></h3>
-    <h3><pre>To create a collection named Employee and insert all values - <span class="query">db("Human_Resource").collection("employee").insertMany</span>([
+    <h3><pre>To create a collection named Employee and insert all values - <span class="query">await employee.create</span>([
         {
             "firstName": "John",
             "lastName": "Doe",
@@ -184,22 +184,22 @@
     </h3>
     <hr>
     <h3>Q2. Query the collection "employee" and list all the documents</h3>
-    <h3><span class="ans">Answer:</span> To list all the documents - <span class="query">db("Human_Resource").collection("employee").find()</span></h3>
+    <h3><span class="ans">Answer:</span> To list all the documents - <span class="query">await employee.find();</span></h3>
     <hr>
     <h3>Q3. Query the collection "employee" and list the employees who are having salary more than 30000</h3>
-    <h3><span class="ans">Answer:</span> To list the employees having salary more than 30000 - <span class="query">db("Human_Resource").collection("employee").find({salary:{$gt:30000}})</span></h3>
+    <h3><span class="ans">Answer:</span> To list the employees having salary more than 30000 - <span class="query">await employee.find({ "salary": { $gt: 30000 } });</span></h3>
     <hr>
     <h3>Q4. Query the collection "employee" and list the employees who are having experience more than 2 years.</h3>
-    <h3><span class="ans">Answer:</span> To list the employees having experience more than 2 years - <span class="query">db("Human_Resource").collection("employee").find({overallExp:{$gt:2}})</span></h3>
+    <h3><span class="ans">Answer:</span> To list the employees having experience more than 2 years - <span class="query">await employee.find({ "overallExp": { $gt: 2 } });</span></h3>
     <hr>
     <h3>Q5. Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year</h3>
-    <h3><span class="ans">Answer:</span> To list the employees having experience more than 1 yr and graduated after 2015 - <span class="query">db("Human_Resource").collection("employee").find({yearGrad:{$gt:2015},overallExp:{$gt:1}})</span></h3>
+    <h3><span class="ans">Answer:</span> To list the employees having experience more than 1 yr and graduated after 2015 - <span class="query">await employee.find({ "yearGrad": { $gt: 2015 }, "overallExp": { $gt: 1 } });</span></h3>
     <hr>
     <h3>Q6. Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</h3>
-    <h3><span class="ans">Answer:</span> To Update salary to 65000 from 70000 - <span class="query">db("Human_Resource").collection("employee").updateMany({salary:{$gt: 70000 }},{$set:{salary: 65000 }})</span></h3>
+    <h3><span class="ans">Answer:</span> To Update salary to 65000 from 70000 - <span class="query">await employee.updateMany({ "salary": { $gt: 70000 } }, { $set: { "salary": 65000 } });</span></h3>
     <hr>
     <h3>Q7. Delete all the documents from "employee" where last company is Y</h3>
-    <h3><span class="ans">Answer:</span> To delete documents of last company is y - <span class="query">db("Human_Resource").collection("employee").deleteMany({lastCompany:"Y"})</span></h3>
+    <h3><span class="ans">Answer:</span> To delete documents of last company is y - <span class="query">await employee.deleteMany({ "lastCompany": "Y" });</span></h3>
     <hr>
 </body>
 </html>
