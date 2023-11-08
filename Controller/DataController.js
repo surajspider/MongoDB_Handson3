@@ -8,4 +8,16 @@ const dataentry = async (req, res) => {
     return res.send(response);
 }
 
-module.exports = { dataentry };
+const listall = async (req, res) => {
+    const listallquery = await employee.find();
+    console.log(listallquery);
+    return res.send(listallquery);
+}
+
+const salarygt = async (req, res) => {
+    const salgt = await employee.find({ "salary": { $gt: 30000 } });
+    console.log(salgt);
+    return res.send(salgt);
+}
+
+module.exports = { dataentry, listall, salarygt };
