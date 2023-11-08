@@ -20,4 +20,28 @@ const salarygt = async (req, res) => {
     return res.send(salgt);
 }
 
-module.exports = { dataentry, listall, salarygt };
+const expgt = async (req, res) => {
+    const expgt2 = await employee.find({ "overallExp": { $gt: 2 } });
+    console.log(expgt2);
+    return res.send(expgt2);
+}
+
+const yrgradexp = async (req, res) => {
+    const gradExp = await employee.find({ "yearGrad": { $gt: 2015 }, "overallExp": { $gt: 1 } });
+    console.log(gradExp);
+    return res.send(gradExp);
+}
+
+const salupdate = async (req, res) => {
+    const salup = await employee.updateMany({ "salary": { $gt: 70000 } }, { $set: { "salary": 65000 } });
+    console.log(salup);
+    return res.send(salup);
+}
+
+const dely = async (req, res) => {
+    const deletey = await employee.deleteMany({ "lastCompany": "Y" });
+    console.log(deletey);
+    return res.send(deletey);
+}
+
+module.exports = { dataentry, listall, salarygt, expgt, yrgradexp, salupdate, dely };
